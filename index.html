@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Test Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <script type="text/javascript">
+            function countDown(secs,elem)
+            {
+                var element = document.getElementById(elem);
+                element.innerHTML = "<h2>You have <b>"+secs+"</b> seconds to answer the questions</h2>";
+                if(secs < 1){
+                    clearTimeout(timer);
+                    myform.getElementById('myquiz').submit();
+                    }
+                secs--;
+                var timer = setTimeout ('countDown('+secs+',"'+elem+'")',1500);
+            }
+        </script>
+    </head>
+    <div id="status"></div>
+    <script type="text/javascript">countDown(30,"status");</script>
+    
+    <body>
+        
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfX7aLb7_6hi2Qg-FaycQI-DX77phn-mzL52D_yx3vs6Y6lvw/formResponse" method="post">
+            <input type="text" name="emailAddress" placeholder="Email Address">
+            
+            <input type="text" name="entry.2077068758" placeholder="What is your Name?">
+            
+            <input type="text" name="entry.1334150046" placeholder="What is your Favorite Color?">
+            
+            <input type="text" name="entry.530954791" placeholder="Who is your Favorite Teacher?">
+            
+            <input type="text" name="entry.482694716" placeholder="What Year Is It?">
+            
+            <input type="text" name="entry.1929075531" placeholder="What date is it?">
+            
+            
+            <button id="clicker" button type="submit">Submit Form</button>
+        </form>
+    </body>
+    <script type="text/javascript">
+        var button = document.getElementById('clicker');
+        setInterval(function(){
+            button.click()
+        },44000)
+    </script>
+</html>
